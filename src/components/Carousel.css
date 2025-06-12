@@ -1,0 +1,95 @@
+.hero-carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    position: relative;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    height: 85vh;
+    object-fit: cover;
+    filter: brightness(70%);
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 10;
+  }
+  
+  .carousel-caption h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .carousel-caption button {
+    padding: 0.7rem 1.5rem;
+    background-color: #1b81c6;
+    border: none;
+    position: relative;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .aref {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .button-l-style::before,
+.button-l-style::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #1b81c6;
+}
+
+.button-l-style::before {
+  top: -3px;
+  left: -3px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.button-l-style::after {
+  bottom: -3px;
+  right: -3px;
+  border-top: none;
+  border-left: none;
+}
+
+.button-l-style:hover {
+    background: #1b81c6c0;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-l-style:hover::before {
+    top: -4px;
+    left: -4px;
+  }
+  
+  .button-l-style:hover::after {
+    bottom: -4px;
+    right: -4px;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }  

@@ -1,0 +1,43 @@
+/* src/components/WhyChooseUs.css */
+
+.why-choose-section {
+  background-color: #f5f6f7;
+  padding: 2.1rem 1.5rem;
+   
+  text-align: center;
+}
+
+.why-title {
+  font-size: 1.5rem;
+  font-family: unset;
+  font-weight: bold;
+    color: #131a23;
+    margin-bottom: 3rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-item {
+  font-family: unset !important;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 1px 2px 8px 24px #f5f6f7;
+  transition: transform 0.3s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+  background-color: #a9acad36;
+}
+
+.why-icon {
+  color: #1b81c6;
+  margin-bottom: 1rem;
+}

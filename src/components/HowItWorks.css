@@ -1,0 +1,51 @@
+/* src/components/HowItWorks.css */
+
+.how-it-works-section {
+    background-color: #f5f6f7;
+    padding: 0.1rem 1.5rem;
+    margin-top: -2%;
+    /* font-family: 'Segoe UI', sans-serif; */
+    text-align: center;
+  }
+  @media screen and (width > 769px) {
+    .how-it-works-section {
+      background-color: #ffff;
+      padding: 0.9rem 1.5rem;
+       
+      /* font-family: 'Segoe UI', sans-serif; */
+    }
+  }
+  
+  .hiw-title {
+    font-size: 1.5rem;
+    color: #131a23;
+    margin-bottom: 3rem;
+  }
+  
+  .hiw-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .hiw-step {
+    background: #ffffff;
+    padding: 1rem;
+    margin-top: -1rem;
+    border-radius: 12px;
+    box-shadow: 1px 2px 8px 24px #f5f6f7;
+    transition: transform 0.3s ease;
+  }
+  
+  .hiw-step:hover {
+    transform: translateY(-5px);
+    background-color: #a9acad36;
+  }
+  
+  .hiw-icon {
+    color: #1b81c6;
+    margin-bottom: 1rem;
+  }
+  

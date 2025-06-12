@@ -1,0 +1,134 @@
+/* Top Social Bar */
+.top-bar {
+  background-color: rgba(27, 104, 155, 0.4); /* much more transparent */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  backdrop-filter: blur(8px); /* stronger blur effect */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* optional: adds a subtle border for separation */
+}
+
+
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .social-icons a span{
+    margin-bottom: -3%;
+  }
+  .icon-facebook{
+    color: #1877F2;
+    
+  }
+  .icon-instagram{
+    color: #E1306C;
+    
+  }
+  .icon-whatsapp{
+    color: #25D366;
+    
+  }
+  .icon-phone{
+    color: #0A66C2;
+    
+  }
+  .social-icons a {
+    color: #0d1b2a;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #909c9c;
+  }
+  
+  /* Navbar */
+  .navbar-inner {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b81c6;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .logo a{
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #1b81c6;
+  }
+  
+  .hamburger-wrapper {
+    background-color: #1f2a384b;
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #333;
+      flex-direction: column;
+      width: 200px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      padding: 1rem;
+    }
+    .main-navbar{
+        padding: 0.5rem;
+    }
+  
+    .nav-links.active {
+      transform: translateX(0);
+    }
+  
+    .hamburger-wrapper {
+      display: block;
+    }
+  
+    .nav-links a {
+      margin-bottom: 1rem;
+    }
+    .navlinks-container:hover {
+        background-color: aliceblue;
+      }
+  }
+  

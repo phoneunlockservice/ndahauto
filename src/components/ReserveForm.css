@@ -1,0 +1,121 @@
+.reserve-form-section {
+    background: #f5f6f7;
+    padding: 2rem 1.5rem;
+    margin-top: -4rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .reserve-form h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .reserve-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* Form groups default */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #444;
+  }
+  
+  input,
+  select {
+    padding: 0.6rem 0.8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #1b81c6;
+  }
+  
+  .textarea-reserve {
+    resize: vertical;
+    min-height: 80px;
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .reserve-form-submit-btn {
+    grid-column: span 2;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #1b81c6;
+    color: #222121;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .reserve-form-submit-btn:hover {
+    background-color: #1b81c6;
+    color: white;
+  }
+  
+  .link-no-underline {
+    color: #1b81c6;
+    text-decoration: none;
+  }
+  
+  .link-no-underline:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive for tablets and below */
+  @media (max-width: 768px) {
+    .reserve-form {
+      grid-template-columns: 1fr;
+      margin-top: -5rem;
+    }
+    .reserve-title-1{
+        display: none !important;
+    }
+  
+    .reserve-form-submit-btn {
+      grid-column: span 1;
+    }
+  }
+  
+  /* Responsive fine-tuning for very large screens */
+  @media (min-width: 769px) {
+    .reserve-form {
+      max-width: 1000px;
+    }
+    .reserve-form h2 {
+        display: none;
+      }
+      .reserve-title-1{
+        text-align: center;
+    font-weight: bold;
+    color: #222;
+      }
+    
+  }
+  
