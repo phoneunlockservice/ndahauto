@@ -1,7 +1,7 @@
 /* Top Social Bar */
 .top-bar {
-  background-color: rgba(27, 104, 155, 0.4); /* much more transparent */
-  color: #fff;
+  background-color: rgba(7, 9, 12, 0.904); /* much more transparent */
+  color: #f7f3f3;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   backdrop-filter: blur(8px); /* stronger blur effect */
@@ -35,7 +35,7 @@
     
   }
   .social-icons a {
-    color: #0d1b2a;
+    color: #e7e7e7;
     text-decoration: none;
     display: flex;
     align-items: center;

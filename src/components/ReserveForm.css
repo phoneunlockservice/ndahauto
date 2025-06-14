@@ -94,6 +94,9 @@ select:focus {
     grid-template-columns: 1fr;
     margin-top: -5rem;
   }
+  .reserve-form-section{
+    padding: 2rem 0.3rem;
+  }
 
   .reserve-title-1 {
     display: none !important;
