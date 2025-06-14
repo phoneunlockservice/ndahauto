@@ -31,7 +31,7 @@ export default function ReserveForm() {
         e.preventDefault();
 
         const backendURL = import.meta.env.PROD
-            ? 'https://ndahauto-production.up.railway.app/api/reservations'
+            ? '/api/reservations'
             : 'http://localhost:5000/api/reservations';
 
         try {
