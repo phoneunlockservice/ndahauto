@@ -3,23 +3,19 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
-const path = require('path');
 const Reservation = require('./models/Reservation');
 
 dotenv.config();
-
 console.log('Loaded email config:', process.env.EMAIL_USER, process.env.EMAIL_PASS ? '✅ pass loaded' : '❌ pass missing');
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+  .catch(err => console.log(err)
+);
 
-// Routes
 const reservationRoutes = require('./routes/reservation');
 app.use('/api/reservations', reservationRoutes);
 
@@ -34,7 +30,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Reserve endpoint
 app.post('/api/reserve', async (req, res) => {
   try {
     const data = req.body;
@@ -64,17 +59,10 @@ app.post('/api/reserve', async (req, res) => {
 
     res.status(200).json({ success: true, message: 'Reservation submitted' });
   } catch (error) {
-    console.error('Error submitting reservation:', error);
+    console.error(error);
     res.status(500).json({ success: false, message: 'Error submitting reservation' });
   }
 });
 
-// Serve frontend (dist)
-app.use(express.static(path.join(__dirname, 'dist')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-
-// Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

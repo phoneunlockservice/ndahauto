@@ -14,21 +14,21 @@ export default function Header() {
             {/* Top Social Bar */}
             <div className="top-bar">
                 <div className="social-icons">
-                    <a href="#"><span className="icon-facebook"><FaFacebookF /></span> Facebook</a>
-                    <a href="#"><span className="icon-instagram"><FaInstagram /></span> Instagram</a>
-                    <a href="#"><span className="icon-whatsapp"><FaWhatsapp /></span> Whatsapp</a>
+                    <a href="https://web.facebook.com/profile.php?id=61576048540129"><span className="icon-facebook"><FaFacebookF /></span> Facebook</a>
+                    <a href="https://www.instagram.com/ndahauto/profilecard/?igsh=MWsyZ284cmQ4ZjRzMA=="><span className="icon-instagram"><FaInstagram /></span> Instagram</a>
+                    <a href="https://wa.me/237678708403"><span className="icon-whatsapp"><FaWhatsapp /></span> WhatsApp</a>
                     {/* <a href="tel:+237678708403"><span className="icon-phone"><FaPhone /></span> +237678708403</a> */}
                 </div>
             </div>
 
             {/* Main Navbar */}
             <nav className="main-navbar">
-                <Link to="/home" className="logo">ndah auto</Link>
+                <Link to="/" className="logo">ndah auto</Link>
                 {/* <div className="logo">NDAH AUTO</div> */}
 
                 {/* Desktop Nav */}
                 <div className="nav-links desktop-only">
-                    <Link to="/home">Home</Link>
+                    <Link to="/">Home</Link>
                     <Link to="/reserve">Reserve a Vehicle</Link>
                     <Link to="/gallery">Gallery</Link>
                     <Link to="/requirements">Requirements</Link>

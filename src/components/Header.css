@@ -8,8 +8,6 @@
   -webkit-backdrop-filter: blur(8px); /* Safari support */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* optional: adds a subtle border for separation */
 }
-
-
   
   .social-icons {
     display: flex;
@@ -29,7 +27,7 @@
     
   }
   .icon-whatsapp{
-    color: #25D366;
+    color: #13e45f;
     
   }
   .icon-phone{
@@ -46,7 +44,7 @@
   }
   
   .social-icons a:hover {
-    color: #909c9c;
+    color: #4a83ec;
   }
   
   /* Navbar */
@@ -59,6 +57,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #1b81c6;
     color: #fff;
     padding: 1rem;
@@ -90,7 +90,7 @@
   }
   
   .nav-links a:hover {
-    color: #1b81c6;
+    color: #ffffffc9;
   }
   
   .hamburger-wrapper {
@@ -111,7 +111,12 @@
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
       padding: 1rem;
+      height: 100vh; /* full height */
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 999;
     }
+    
     .main-navbar{
         padding: 0.5rem;
     }

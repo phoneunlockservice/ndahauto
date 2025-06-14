@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './ReserveForm.css';
 import { motion } from 'framer-motion';
 
@@ -17,6 +17,7 @@ export default function ReserveForm() {
         additionalNotes: '',
         agreed: false,
     });
+    const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -29,17 +30,21 @@ export default function ReserveForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const backendURL = import.meta.env.PROD
+            ? '/api/reservations' // ⬅️ Replace with actual Railway URL
+            : 'http://localhost:5000/api/reservations';
+
         try {
-            const response = await fetch("http://localhost:5000/api/reservations", {
-                method: "POST",
+            const response = await fetch(backendURL, {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json"
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData),
             });
 
             if (response.ok) {
-                alert("Reservation submitted successfully!");
+                setShowSuccessDialog(true);
                 setFormData({
                     vehicle: '',
                     acPreference: '',
@@ -55,13 +60,14 @@ export default function ReserveForm() {
                 });
             } else {
                 const errorData = await response.json();
-                alert("Failed to submit reservation: " + errorData.error);
+                alert('Failed to submit reservation: ' + errorData.error);
             }
         } catch (err) {
-            console.error("Error submitting form:", err);
-            alert("Something went wrong. Please try again.");
+            console.error('Error submitting form:', err);
+            alert('Something went wrong. Please try again.');
         }
     };
+
     return (
         <section className="reserve-form-section">
             <motion.div
@@ -91,7 +97,7 @@ export default function ReserveForm() {
 
                     <div className="form-group">
                         <label>AC Preference</label>
-                        <select name="acPreference" value={formData.ac} onChange={handleChange} required>
+                        <select name="acPreference" value={formData.acPreference} onChange={handleChange} required>
                             <option value="">Select</option>
                             <option value="AC">AC</option>
                             <option value="Non-AC">Non-AC</option>
@@ -156,7 +162,7 @@ export default function ReserveForm() {
 
                     <div className="form-group">
                         <label>Need a Driver?</label>
-                        <select name="driverNeeded" value={formData.driver} onChange={handleChange} required>
+                        <select name="driverNeeded" value={formData.driverNeeded} onChange={handleChange} required>
                             <option value="">Select</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -168,7 +174,7 @@ export default function ReserveForm() {
                         <input
                             type="tel"
                             name="phoneNumber"
-                            value={formData.phone}
+                            value={formData.phoneNumber}
                             onChange={handleChange}
                             placeholder="e.g. +237678708403"
                             required
@@ -182,7 +188,7 @@ export default function ReserveForm() {
                             className="textarea-reserve"
                             rows="3"
                             placeholder="Anything else we should know?"
-                            value={formData.notes}
+                            value={formData.additionalNotes}
                             onChange={handleChange}
                         ></textarea>
                     </div>
@@ -208,8 +214,17 @@ export default function ReserveForm() {
                         Submit Reservation
                     </button>
                 </form>
-
             </motion.div>
+            {showSuccessDialog && (
+                <div className="dialog-overlay">
+                    <div className="dialog-box">
+                        <p>Reservation submitted successfully. We'll contact you shortly.</p>
+                        <button onClick={() => setShowSuccessDialog(false)}>Ok</button>
+                    </div>
+                </div>
+            )}
+
         </section>
+
     );
 }
