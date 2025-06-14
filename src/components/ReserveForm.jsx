@@ -30,9 +30,9 @@ export default function ReserveForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const backendURL = import.meta.env.PROD
-            ? '/api/reservations'
-            : 'http://localhost:5000/api/reservations';
+        const backendURL = import.meta.env.DEV
+            ? 'http://localhost:5000/api/reservations'
+            : '/api/reservations';
 
         try {
             const response = await fetch(backendURL, {
