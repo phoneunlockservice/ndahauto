@@ -7,7 +7,11 @@ dotenv.config();
 console.log('Loaded email config:', process.env.EMAIL_USER, process.env.EMAIL_PASS ? '✅ pass loaded' : '❌ pass missing');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://ndahauto.com',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Basic logger for all requests
