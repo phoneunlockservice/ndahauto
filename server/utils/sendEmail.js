@@ -13,7 +13,7 @@ const sendEmailNotification = async (formData) => {
 
   const mailOptions = {
     from: 'hello@ndahauto.com',
-    to: 'hello@ndahauto.com', // Sending to self (can change)
+    to:  process.env.EMAIL_RECEIVER, // Sending to self (can change)
     subject: 'New Vehicle Reservation',
     html: `
       <h3>New Vehicle Reservation Received</h3>

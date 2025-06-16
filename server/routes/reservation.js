@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const Reservation = require('../models/Reservation');
-require('dotenv').config();
 
 // Email transporter setup
 const transporter = nodemailer.createTransport({
@@ -22,6 +21,10 @@ router.post('/', async (req, res) => {
     console.log('📝 Reservation submission received:', data);
 
     // Save to MongoDB
+    if (!data.vehicle || !data.pickupDate || !data.phoneNumber) {
+      return res.status(400).json({ success: false, message: 'Missing required fields' });
+    }
+    
     const newReservation = new Reservation(data);
     await newReservation.save();
     console.log('✅ Saved to database');
@@ -29,7 +32,7 @@ router.post('/', async (req, res) => {
     // Send email
     const mailOptions = {
       from: `"Ndah Auto Reservation" <hello@ndahauto.com>`,
-      to: 'hello@ndahauto.com',
+      to: process.env.EMAIL_RECEIVER,
       subject: 'New Vehicle Reservation',
       html: `
         <h3>New Reservation Details</h3>
@@ -47,10 +50,8 @@ router.post('/', async (req, res) => {
     console.log('📧 Email sent successfully');
 
     res.status(200).json({ success: true, message: 'Reservation submitted' });
-  } catch (error) {
-    console.error('❌ Error in reservation submission:', error);
-    res.status(500).json({ success: false, message: 'Error submitting reservation' });
+  } catch (emailErr) {
+    console.error('⚠️ Email sending failed:', emailErr.message);
   }
 });
-
 module.exports = router;
