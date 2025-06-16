@@ -9,7 +9,7 @@ const app = express();
 
 // CORS setup for both local and production
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://www.ndahauto.com', 'https://ndahauto.com'],
+  origin: ['http://localhost:5173', 'https://www.ndahauto.com', 'https://ndahauto.com', 'https://believable-youth-production.up.railway.app/'],
   methods: ['GET', 'POST'],
   credentials: true,
 }));
