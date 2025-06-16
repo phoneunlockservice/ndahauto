@@ -32,7 +32,7 @@ export default function ReserveForm() {
 
         const backendURL = import.meta.env.DEV
             ? 'http://localhost:5000/api/reservations'
-            : 'https://api.ndahauto.com/api/reservations';
+            : 'https://easygoing-appreciation-production.up.railway.app/api/reservations';
 
         try {
             const response = await fetch(backendURL, {
