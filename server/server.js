@@ -9,10 +9,24 @@ const app = express();
 
 // CORS setup for both local and production
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://www.ndahauto.com', 'https://ndahauto.com', 'https://believable-youth-production.up.railway.app/'],
-  methods: ['GET', 'POST'],
+  origin: (origin, callback) => {
+    console.log('🛂 CORS origin check:', origin);
+    const allowedOrigins = [
+      'http://localhost:5173',
+      'https://ndahauto.com',
+      'https://www.ndahauto.com',
+      'https://believable-youth-production.up.railway.app'
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
 }));
+app.options('*', cors());
 
 app.use(express.json());
 
