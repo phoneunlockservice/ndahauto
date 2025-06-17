@@ -61,5 +61,4 @@ router.post('/track', async (req, res) => {
     res.status(500).json({ message: 'Error logging pageview' });
   }
 });
-
 module.exports = router;
