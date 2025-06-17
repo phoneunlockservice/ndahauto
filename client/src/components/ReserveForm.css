@@ -81,11 +81,10 @@ select:focus {
 
 .link-no-underline {
   color: #1b81c6;
-  text-decoration: none;
 }
 
 .link-no-underline:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Responsive for tablets and below */

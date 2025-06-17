@@ -1,6 +1,7 @@
 .cta-section {
     position: relative;
     background-size: cover;
+ 
     background-position: center;
     height: 300px;
     display: flex;
@@ -44,7 +45,6 @@
     border: none;
     text-decoration: none;
     padding: 0.8rem 1.5rem;
-    color: #000;
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
@@ -52,7 +52,7 @@
   }
   .cta-btn-link{
     text-decoration: none;
-    color: #000;
+    color: #fcfcfc;
   }
   
   .cta-btn:hover {
