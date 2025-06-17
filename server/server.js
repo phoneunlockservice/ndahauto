@@ -30,6 +30,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
+console.log("Submitting form from:", window.location.origin);
 
 // Request logger
 app.use((req, res, next) => {
