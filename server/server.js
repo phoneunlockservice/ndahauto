@@ -16,6 +16,7 @@ app.use(cors({
       'https://ndahauto.com',
       'https://www.ndahauto.com',
       'https://api.ndahauto.com',
+      'https://ndahauto-production.up.railway.app',
       'https://believable-youth-production.up.railway.app'
     ];
     if (!origin || allowedOrigins.includes(origin)) {
