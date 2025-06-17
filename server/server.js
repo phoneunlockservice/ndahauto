@@ -27,7 +27,6 @@ app.use(cors({
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
 }));
-// app.options('*', cors());
 
 app.use(express.json());
 
@@ -44,7 +43,10 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 const reservationRoutes = require('./routes/reservation');
+const visitorRoutes = require('./routes/visitors');
+
 app.use('/api/reservations', reservationRoutes);
+app.use('/api/visitors', visitorRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
